@@ -6,8 +6,6 @@
 pennies = int(input("Please enter the number of Pennies: "))
 
 def currencyConverter(pennies):
-
-    #using a list, and tuple instead of making it verbose
     currency = [
         ("Pound", 240),
         ("Crown", 60), 
