@@ -1,45 +1,49 @@
-##
-##
-## r -> s
-## r -> l
-## s -> p
-## s -> l 
-## p -> r
-## p -> k 
-## k -> s 
-## k -> r 
-## l -> k
-## l -> p 
-##
-
-
+############
+## Andrew ##
+##********##
+## r -> s ##
+## r -> l ##
+## s -> p ##
+## s -> l ##
+## p -> r ##
+## p -> k ##
+## k -> s ##
+## k -> r ##
+## l -> k ##
+## l -> p ##
+############
 import random;
 
 possible_variants = [ 'R', 'P', 'S', 'L', 'K' ];
-computer_answer = random.choice(possible_variants).lower()
-user_choice = input("Please enter r, p, s, l, or k: ")
 
-def comparitor():
-    if (user_choice == computer_answer):
-        print("There is a draw!")
+possible_outcomes = {
+        'r': ['s', 'l'],
+        's': ['p', 'l'], 
+        'p': ['r', 'k'],
+        'k': ['s', 'r'],
+        'l': ['k', 'p']
+        };
 
-
-
-    match (user_choice.lower()):
-        case 'r':
-            if computer_answer == 's' | computer_answer == 'l':
-                print("You win bitch!")
-            else if computer_answer == 'k' | computer_answer == 'p':
-                print("You lose")
-            else:
-                print("no one win")
-        #case 'p':
+def handle_outcome():
+    while True:
+        computer_answer = random.choice(possible_variants).lower();
+        user_input = input("Please enter r, p, s, l, or k: ");
+        if len(user_input) != 1:
+            print("Invalid amound, please enter one character!\n");
+            continue
+        user_answer = user_input[0]; #represents the char value
         
+        if user_answer not in possible_variants: #Checking if the value is valid or not :P
+            print("Error: cannot find value\n");
+        else:
+            break;
 
-            
-print(comparitor())
+        #Handle each case, if equal, if won, if lose
+        if user_input == computer_answer:
+            return f"[TIE]\nComputer Answer: {computer_answer}\nYour Answer: {user_answer}";
+        if computer_answer in possible_outcomes[user_answer]:
+            return f"[YOU WIN!!]\nYour Answer: {user_answer}\nComputer Answer: {computer_answer}";
+        else:
+            return f"[YOU LOSE]\nComputer Answer: {computer_answer}\nYour answer: {user_answer}";
 
-
-print(f"Computer answered: {computer_answer}")
-
-
+print(handle_outcome());
