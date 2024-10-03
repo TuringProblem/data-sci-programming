@@ -9,20 +9,22 @@ class Airline:
         if rate == 1:
             rating = ['A', 'B', 'C', 'D', 'E', 'F']; 
             actual_time = int(input("Please enter the actual arrival time: "));
-            if actual_time < 0 or actual_time > 2359:
+            minutes = actual_time % 100
+            if actual_time < 0 or actual_time > 2359 or minutes > 59:
                 Airline.handle_actual(time, 0)
             else:
+
                 number = abs(actual_time - time);
 
                 if number == 0:
                     print(f"Rating is: {rating[0]}");
-                if number > 0 and number <= 15:
+                if 0 < number <= 15:
                     print(f"Rating is: {rating[1]}")
-                elif number > 15 and number <= 30:
+                elif 15 < number <= 30:
                     print(f"Rating is: {rating[2]}")
-                elif number > 30 and number <= 30:
+                elif 30 < number <= 45:
                    print(f"Rating is: {rating[3]}")
-                elif number > 45 and number <= 60:
+                elif 45 < number <= 60:
                     print(f"Rating is: {rating[4]}")
                 elif number > 60:
                     print(f"Rating is: {rating[5]}")
@@ -38,7 +40,8 @@ class Airline:
     def handle_time(cls, rate: int):
         if rate == 1:
             time = int(input("Please enter the scheduled arrival time: "));
-            if time < 0 or time > 2359:
+            minutes = time % 100
+            if time < 0 or time > 2359 or minutes > 59:
                 Airline.handle_actual(time, 2)
             else:
                 Airline.handle_actual(time, 1)
