@@ -1,4 +1,4 @@
-######
+####################
 ## Author: Andrew ##
 ##****************##
 ##If all customers participate how many customers will have to be needed to raise the desired amount?
@@ -32,8 +32,8 @@ third_participation, third_customer = donations(0.33)
 
 
 print(
-    f"\nParticipation (100%): ${full_participation:.2f} Customers required if participation is 100%: {customers}"
+    f"\nParticipation (100%):\nFunds raised: ${full_participation:.2f}\nCustomers required if participation is 100%: {customers}\n"
 )
 print(
-    f"Participation (33%): ${third_participation:.2f} Customers required if participation is 33%: {third_customer}\n"
+    f"Participation (33%):\nFunds raised: ${third_participation:.2f}\nCustomers required if participation is 33%: {third_customer}\n"
 )

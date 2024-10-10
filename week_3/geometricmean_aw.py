@@ -2,10 +2,9 @@
 ## Author: Andrew ##
 ##****************##
 
-
-import itertools
+import itertools  # # Using this python package, when researching thought it would be unique to add due to it's iterators for "efficient" looping
 import math
-import operator
+import operator  # # only using the operator for the .mul func, this function just takes a, b and returns a * b
 
 purchase = float(input("Please enter the purchase price: $"))
 years = int(input("Please enter the number of years: "))

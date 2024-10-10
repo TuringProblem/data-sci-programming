@@ -1,4 +1,4 @@
-#######
+####################
 ## Author: Andrew ##
 ##****************##
 ## Assume that you will have 10,000 customers who will have purchase totals of a randomly generated number
@@ -22,7 +22,6 @@ def donations(customers):
         user_purchases = random.uniform(1.00, 100.00)  # for max and min donations
         rounded_purchase = math.ceil(user_purchases)
         donation = rounded_purchase - user_purchases
-
         max_donation += donation
 
         if random.randint(0, 1) == 1:

@@ -17,7 +17,6 @@ def pop_handler(init_pop, years):
         deathr = int(population * 0.0085)  # -> 0.085%
         imemgration = 1_125_000
         population += birthr - deathr + imemgration
-
         print(f"{i:<8}{population}")
 
 
