@@ -11,21 +11,26 @@
 import math
 import random
 
-
-def handle_money(min_amount=1.00, max_amount=100.00):
-    customers = 10_000
-    round(random.uniform(min_amount, max_amount), 2)
-    
-
-    
-
-    
-    # TODO: add a participation rate 1.0 -> 100 0.5 -> 50   
-
-def donations(participation=1.0):
-
-     
-
-    
+total_customers = 10_000
 
 
+def donations(customers):
+    max_donation = 0
+    half_donation = 0
+
+    for _ in range(customers):
+        user_purchases = random.uniform(1.00, 100.00)  # for max and min donations
+        rounded_purchase = math.ceil(user_purchases)
+        donation = rounded_purchase - user_purchases
+
+        max_donation += donation
+
+        if random.randint(0, 1) == 1:
+            half_donation += donation
+
+    return max_donation, half_donation
+
+
+max_donation, half_donation = donations(total_customers)
+print(f"\nMax Participation (100%): ${max_donation:.2f}")
+print(f"Half Participation (50%): ${half_donation:.2f}\n")

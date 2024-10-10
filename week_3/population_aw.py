@@ -6,22 +6,19 @@
 ## pop decrease 0.85% every year through deaths
 ## The population increase every year 1,125,000 from immigration/emigration
 
-
-def pop_handler():
-    start_pop = 335_893_238
-    births = 1.2 / 100
-    deaths = 0.85 / 100
-    imemgration = 1_125_000
-    year = 25
-    print(f"{'Year':<10}{'Population':<15}")
-    currentpop = start_pop
-    for i in range(1, year + 1):
-        birthr = currentpop * births
-        deathr = currentpop * deaths
-        combined_increase = birthr - deathr + imemgration
-
-        currentpop += combined_increase
-        print(f"Population: {currentpop:.2f}")
+starting_population = 335_893_238
 
 
-pop_handler()
+def pop_handler(init_pop, years):
+    population = init_pop
+    print("Year    Population:")
+    for i in range(1, years + 1):
+        birthr = int(population * 0.012)  # -> 1.2%
+        deathr = int(population * 0.0085)  # -> 0.085%
+        imemgration = 1_125_000
+        population += birthr - deathr + imemgration
+
+        print(f"{i:<8}{population}")
+
+
+pop_handler(starting_population, 25)
