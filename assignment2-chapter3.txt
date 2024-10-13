@@ -58,6 +58,8 @@ floating-point format:
     sign = 1
 
     FIRST: we must get the binary equivalent.
+    
+    {the formula = n * b = v, n = v, v == 1 ? v - 1, n = v : n = v}
 
     0.0789999 * 2 = 0.1579998 -> {kEEP: 0}
     0.1579998 * 2 = 0.3159996 -> {KEEP: 0}
@@ -105,8 +107,46 @@ floating-point format:
     sign = 1
 
     FIRST: get the binary equivalent again:
+        
+        -32.671 (since 32 is a whole value we must divide first)
+        32 / 2 = 16 R 0 {KEEP: 0}
+        16 / 2 = 8 R 0 {KEEP: 0} 
+        8 / 2 = 4 R 0 {KEEP: 0} 
+        4 / 2 = 2 R 0 {KEEP: 0} 
+        2 / 2 = 1 R 0 {KEEP: 0} 
+        1 / 2 = 0 R 1 {KEEP: 1} 
 
+        positive values are (32) : 100000
+        
+        Convert decimals: -> the formula = n * b = v, n = v, v == 1 ? v - 1, n = v : n = v  
 
+        .671 * 2 = 1.342 {KEEP: 1} - 1
+        0.342 * 2 = 0.684 ... 0
+        0.684 * 2 = 1.368 ... 1
+        0.368 * 2 = 0.736 ... 0
+        0.736 * 2 = 1.472 ... 1
+        0.472 * 2 = 0.944 ... 0
+        0.944 * 2 = 1.888 ... 1
+        0.888 * 2 = 1.776 ... 1
+        0.776 * 2 = 1.552 ... 1
+        0.552 * 2 = 1.104 ... 1
+        0.104 * 2 = 0.208 ... 0
+        0.208 * 2 = 0.416 ... 0
+        0.416 * 2 = 0.832 ... 0
+        0.832 * 2 = 1.664 ... 1
+        0.664 * 2 = 1.328 ... 1
+        0.328 * 2 = 0.656 ... 0
 
+      .1010101111000110 -> together making -> 100000.1010101111000110 -> make the value normal (for EXP)
+      move <- n^+5 1.000001010101111...
+
+      Exponent -> 127 + 5 (from n^+5) = 132 -> need to get binary for 132:
+
+      132 -> 10000100 -> this is the exp
+
+      | Mantissa | -> use the remaining bits -> 00000101010111100011010
+
+      1 10000100 00000101010111100011010
+      s  exp         Mantissa
 
   }
