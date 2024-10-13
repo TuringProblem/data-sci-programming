@@ -1,0 +1,112 @@
+Andrew Wellington
+COSC-236 Computer Architecture
+October, 13 2024
+Assignment-2-Chapter 3
+
+Q1) Find the ones and twos complements for the following:
+
+  - (129)_10 -> convert to binary -> 129 == 10000001 {
+    10000001
+    01111110 -> (1s complement)
+    01111111 -> (2s complement)
+  }
+  
+                                            (512, 256, 128, 64, 32, 16, 8, 4, 2, 1)
+  - (717)_10 -> convert to binary -> 717 ==   1    0    1    1   0   0  1  1  0  1 {
+    1011001101
+    0100110010 -> (1s complement)
+    0100110011 -> (2s complement)
+  }
+
+
+Q2) If the number of the bits is 6 then:
+  - (How many unsigned/signed values can be represented / range of values) -> {
+
+      | Unsigned values | -> represent number values that are POSITIVE; in this instance
+      6 bits == 000000 (or up to 64) -> unsigned values represent from (0-63) inclusive.
+
+      | signed values | -> represents positive, and negative values; the most significant
+      bit is used as the sign bit. (1 -> negative | 0 -> positive) -> signed values represent
+      from (-32 - 31).
+
+      ------------------------------------------
+      | Bits   | unsigned value | signed value | 
+      | 000000 |      0         |      0       |
+      | 000001 |      1         |      1       | This represents the unsigned/signed (or 2s Complement)
+      | 000010 |      2         |      2       | values and their corresponding bits. This also
+      | 000011 |      3         |      3       | can explain how programming languages like Java 
+      |  ...   |     ...        |     ...      | C, etc. handle negative and positive values
+      | 011110 |      30        |      30      | in memory.  
+      | 011111 |      31        |      31      | 
+      | 100000 |      32        |     -32      | In Java, ints are signed values, and are 4 bytes
+      | 100001 |      33        |     -31      | this means it can hold values from:
+      |  ...   |     ...        |     ...      |    (-2,147,483,648 - 2,147,483,647)
+      | 111110 |      62        |     -2       | this is why for larger numbers Java uses Longs (signed 8 bits)
+      | 111111 |      63        |     -1       | and you can imagine how much that can hold.
+      ------------------------------------------
+
+
+  }
+
+Q3) If you have 32 bits floating-point format, the 1 bit for the number sign, 1 bit for the sign,
+8 bits for the exponent, and the rest for the Mantissa. Convert the following numbers into 32
+floating-point format:
+
+  - (-0.0789999) -> {
+    WHAT WE KNOW: value is negative so the sign will be:
+
+    sign = 1
+
+    FIRST: we must get the binary equivalent.
+
+    0.0789999 * 2 = 0.1579998 -> {kEEP: 0}
+    0.1579998 * 2 = 0.3159996 -> {KEEP: 0}
+    0.3159996 * 2 = 0.6319992 -> {KEEP: 0}
+    0.6319992 * 2 = 1.2639984 -> {KEEP: 1} -> 1.2639984 - 1
+    0.2639984 * 2 = 0.5279968 -> {kEEP: 0}
+    0.5279968 * 2 = 1.0559936 -> {kEEP: 1} -> 1.0559936 - 1
+    0.0559936 * 2 = 0.1119872 -> {kEEP: 0}
+    0.1119872 * 2 = 0.2239744 -> {kEEP: 0}
+    0.2239744 * 2 = 0.4479488 -> {kEEP: 0}
+    0.4479488 * 2 = 0.8958976 -> {kEEP: 0}
+    0.8958976 * 2 = 1.7917952 -> {kEEP: 1} -> 1.7917952 - 1
+    0.7917952 * 2 = 1.5835904 -> {kEEP: 1} -> 1.5835904 - 1
+    0.5835904 * 2 = 1.1671808 -> {kEEP: 1} -> 1.1671808 - 1
+    1.1671808 * 2 = 0.3343616 -> {kEEP: 0} 
+    0.3343616 * 2 = 0.6687232 -> {kEEP: 0} 
+    0.6687232 * 2 = 1.3374464 -> {kEEP: 1} -> 1.3374464 - 1
+    0.3374464 * 2 = 0.6748928 -> {kEEP: 0} 
+    0.6748928 * 2 = 1.3497856 -> {kEEP: 1} -> 1.3497856 - 1
+    0.3497856 * 2 = 0.6995712 -> {kEEP: 0}
+
+    [0.0001_01000011100101010110011]
+    
+    
+    -0.0789999 = 0.00010100001110010101..
+                  -> move decimal to whole value 
+                  4 spaces 1.0100001110010101 (2^-4)
+                  FOR Exponent we take -4 + 127 = 123 -> get the binary value for 123 and that the ex
+                  123 -> 01111011
+
+      exp = 01111011
+    
+    so for now we know the sign (negative) 1 and the exponent: 01111011 so now we just need Mantissa:
+      | Mantissa | -> take the remaining bits AFTER the decimal value -> 01000011100101010110011
+
+
+      Mantissa = 01000011100101010110011
+
+    ALL VALUE: 1 01111011 01000011100101010110011
+              sign Exp      Mantissa
+  }
+  - (-32.671) -> {
+    WHAT WE KNOW: value is negative so the sign will be:
+
+    sign = 1
+
+    FIRST: get the binary equivalent again:
+
+
+
+
+  }
