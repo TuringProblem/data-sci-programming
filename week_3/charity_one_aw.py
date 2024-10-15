@@ -8,6 +8,7 @@
 ## - if customers are 50% likely to participate
 ## hint: use the cieling of x: the smallest integer greatest than or equal to x.
 
+
 import math
 import random
 
