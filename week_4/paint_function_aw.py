@@ -4,7 +4,6 @@
 ## func_calc_amt_paint
 ##
 
-
 from math import ceil
 
 
@@ -25,4 +24,4 @@ height = float(input("Please enter the height: "))
 doors = int(input("Please enter the number of doors: "))
 windows = int(input("Please enter the number of windows: "))
 total_gallons = clac_amt_paint(width, length, height, doors, windows)
-print(ceil(total_gallons))
+print(f"[{ceil(total_gallons)}] Gallons of paint needed")
