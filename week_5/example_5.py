@@ -24,9 +24,9 @@ daily_numbers = []
 numbs = list(range(5, 25))
 print(numbs, end="\n")
 
-for i in numbs:
-    if numbs[i] % 2:
-        print(f"Even!!!! {i}")
+# for i in numbs:
+#    if numbs[i] % 2:
+#        print(f"Even!!!! {i}")
 
 
 # --------------------------- First class lesson below
@@ -41,3 +41,46 @@ print(mylist)
 
 mylist_two = [3, 4, "Hello", 9.2]
 mylist_three = [0] * 5
+
+
+# ---------------------------------------------------------------------
+
+
+print("Another\n\n\n\n\n")
+import random
+
+daily_n = []
+for i in range(7):
+    r = random.randint(0, 9999)
+    daily_n.append(r)
+
+print(daily_n)
+
+print(min(daily_n))
+print(max(daily_n))
+
+sorted = daily_n.sort()
+print(sorted)
+
+print(sum(daily_n))
+
+average = sum(daily_n) / len(daily_n)
+
+print(f"Average: {average}")
+
+rounded_average = round(average, 2)
+print(rounded_average)
+
+# ----------------------------------------------
+
+print("Another\n\n\n")
+
+freq = [0] * 6
+
+for n in range(0, 1000000):
+    r = random.randint(0, 5)
+    freq[r] += 1
+
+
+print(freq)
+print(sum(freq))
