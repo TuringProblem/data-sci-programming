@@ -18,4 +18,4 @@ reverse()| Method        | Reverses the items in the calling list, changes the c
 len()    | Function      | Returns the number of items in len(list) the passed list, last pos is len(list) - 1                 | len(list)                   | Yes
 min()    | Function      | Returns the minimum value in a list, all items on list must be of same type                         | min(list)                   | Yes
 max()    | Function      | Returns the maximum value in a list, all items on list must be of same type                         | max(list)                   | Yes
-
+sum()    | Function      | Returns the sum of the values in a list, all items on list must be of same type                     | sum(list)                   | Yes
