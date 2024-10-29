@@ -19,3 +19,12 @@ len()    | Function      | Returns the number of items in len(list) the passed l
 min()    | Function      | Returns the minimum value in a list, all items on list must be of same type                         | min(list)                   | Yes
 max()    | Function      | Returns the maximum value in a list, all items on list must be of same type                         | max(list)                   | Yes
 sum()    | Function      | Returns the sum of the values in a list, all items on list must be of same type                     | sum(list)                   | Yes
+
+# Iterators/Slicing
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+name     | Category      | Description                                                                                         | Example                     | Return Type
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

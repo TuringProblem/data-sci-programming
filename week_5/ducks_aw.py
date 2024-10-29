@@ -49,3 +49,7 @@ print(f"Lenghth of new list: {len(ducks)}\n")
 
 ducks.sort()
 print(ducks)
+
+
+ducks.append("Andrew")
+print(ducks)
