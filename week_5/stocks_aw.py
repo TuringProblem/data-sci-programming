@@ -48,17 +48,25 @@ def handleTerms(val):
         gainsWithLoses.append(dif)
         print(gainsWithLoses)
 
-    t = sum(gainsWithLoses)
-
-    print(f"\n\nValue(from: {val}): {t}\n\n")
-
+    loss = []
     if val == lTerm:
-        newTotalWithTax = t * 0.15
-        return newTotalWithTax
-    else:
-        newTotalWithTax = t * 0.22
-        return newTotalWithTax
+        newAmount = list(itertools.dropwhile(lambda x : x > 0, gainsWithLoses))
+        print(f"\n\n\nshit{newAmount}\n\n\n")
+        for i in gainsWithLoses:
+            if i < 0:
+                continue
 
+            loss.append(i)
+            gainsWithLoses.remove(i)
+        return  gainsWithLoses
+    else:
+        for j in gainsWithLoses:
+            if j < 0:
+                continue
+            loss.append(j)
+            gainsWithLoses.remove(j)
+        print(f"Gains (After the negatives are out): {gainsWithLoses}")
+        return gainsWithLoses
 
 print(f"\n\nShort-term: {handleTerms(sTerm)}\t\nLong-term: {handleTerms(lTerm)}\n\n")
 
@@ -69,6 +77,10 @@ lNums = [n for s in lTerm for n in s[:2]]
 print(f"Long-term Values: {sNums}\nLong-term Values: {lNums}\n\n")
 print(f"Short-term (before calculations): {sTerm}\n\n")
 
+
+
+
+print(f"{handleTerms(sTerm)}\n{handleTerms(lTerm)}")
 ## You are to calculate and print to the screen the following:
 
 ## - total long term gains/losses
