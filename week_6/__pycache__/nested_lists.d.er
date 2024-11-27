@@ -1,0 +1,27 @@
+##[pylyzer] failed /home/andrew/work/python/school/data_sci_programming/week_6/nested_lists.py 1731012616 1134
+.random = pyimport "<failure>"
+.<failure> = pyimport "<failure>"
+
+
+.week: List!(List!(Ord and Add(Never), 1), 0)
+.day: List!(Never, 0)
+
+
+
+.hourlyPatients: Never
+
+
+
+
+
+
+
+.myList: List!({3, 4, 1, 5}, 4)
+
+.myListTwo: List!({Type_v_global_7: Int | (Type_v_global_7 >= 3) and (Type_v_global_7 <= pred(9))}, _: Nat)
+
+.myListThree: List!({Type_v_global_10: Int | (Type_v_global_10 >= 10) and (Type_v_global_10 <= pred(0))}, _: Nat)
+
+
+.myList: List!(Int, _: Nat)
+

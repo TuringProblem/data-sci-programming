@@ -1,0 +1,13 @@
+##[pylyzer] failed /home/andrew/work/python/school/data_sci_programming/week_6/atest.py 1731706844 2405
+.csv = pyimport "<failure>"
+.<failure> = pyimport "<failure>"
+
+.variables: List!({"The percentage of 1st class passengers who perished", "The percentage of 1st class male passengers who perished", "The percentage of 2nd class female passengers who perished", "The percentage of 3rd class male passengers who perished", "The percentage of 1st class female passengers who perished", "The percentage of 2nd class male passengers who perished", "The percentage of 2nd class passengers who perished", "The percentage of 3rd class passengers who perished", "The percentage of 3rd class female passengers who perished"}, 9)
+.data: Dict!({{"1st"}: Dict!({{"total"}: {0}, {"femalePerished"}: {0}, {"malePerished"}: {0}, {"perished"}: {0}, {"femaleTotal"}: {0}, {"maleTotal"}: {0}}), {"2nd"}: Dict!({{"perished"}: {0}, {"malePerished"}: {0}, {"femaleTotal"}: {0}, {"total"}: {0}, {"maleTotal"}: {0}, {"femalePerished"}: {0}}), {"3rd"}: Dict!({{"malePerished"}: {0}, {"femaleTotal"}: {0}, {"total"}: {0}, {"maleTotal"}: {0}, {"perished"}: {0}, {"femalePerished"}: {0}})})
+
+.calculate_percentage: |R :> {0}, Type_9 <: Structural({.__div__ = (self: Never, ?R) -> ?O}), T: Type, R: Type, O: Type|(part: Type_9, whole: Structural({.__gt__ = (self: Never, R) -> Bool})) -> T or {0}
+
+
+e_v_global_663 != 0))}, O <: Structural({.__mul__ = (self: Never, R) -> T})|(part: Type_9, whole: Structural({.__gt__ = (self: Never, R) -> Bool})) -> T or {0}
+
+
